@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">En virituell visuell teller:</div>
+    <label id="labelCount">0</label>
+    <div id="buttonContainer">
+        <button onclick="decrease()" class="buttons">Trekk fra ett tall</button>
+        <button onclick="reset()" class="buttons">Nullstill</button>
+        <button onclick="increase(this.innerHTML)" class="buttons">Legg til ett tall</button>
+        </div>
+<style>
+    .header{
+        font-size: 60px;
+        text-align: center;
+        user-select: none;
+    }
+    #buttonContainer{
+        text-align: center;
+        user-select: none;
+    }
+    .buttons{
+        padding: 10px;
+        font-size: 1.1em;
+        color: rgb(167, 243, 243);
+        background-color: rgb(221, 79, 79);
+        border-radius: 15px;
+        cursor: pointer;
+        user-select: none;
+    }
+    #labelCount{
+        display: block;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(212, 204, 61);
+        font-size: 150px;
+        user-select: none;
+        }
+    .buttons:hover{
+        background-color: rgb(255, 12, 12);
+}
+</style>
+<script>
+    const labelCount = document.getElementById("labelCount")
+let count = 0;
+
+function decrease(){
+    count=count-1;
+    labelCount.innerHTML = count;
+}
+function increase(test){
+    count=count+1;
+    labelCount.innerHTML = count;
+    console.log(test)
+}
+function reset(){
+    count=0;
+    labelCount.innerHTML = count;
+}
+</script>
+</body>
+</html>
